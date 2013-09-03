@@ -61,6 +61,7 @@ module.exports = function(grunt) {
         }
       })
       grunt.log.ok()
+      async()
     })
   });
 
