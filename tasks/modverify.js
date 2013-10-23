@@ -19,7 +19,8 @@ module.exports = function(grunt) {
       punctuation: '.',
       separator: ', ',
       fileFilter: ['*.js'],
-      directoryFilter: ['!.git', '!components', '!bower_components', '!node_modules']
+      directoryFilter: ['!.git', '!components', '!bower_components', '!node_modules'],
+      excludes: []
     });
 
     var async = this.async()
@@ -51,6 +52,10 @@ module.exports = function(grunt) {
       var keys = Object.keys(relativeModules)
       keys.forEach(function(key) {
         if (!verify.fileWithNameExists(key)) {
+          if (options.excludes.indexOf(key)) {
+            grunt.verbose.writeln('Excluding '+key)
+            return
+          }
           grunt.log.error(key, 'does not exist')
           grunt.log.error('It is referenced from the following files:')
           var refs = relativeModules[key]
