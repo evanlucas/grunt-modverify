@@ -21,9 +21,9 @@ module.exports = function(grunt) {
       fileFilter: ['*.js'],
       directoryFilter: ['!.git', '!components', '!bower_components', '!node_modules']
     });
-    
+
     var async = this.async()
-    
+
     verify.processForDir(process.cwd(), options, function(err, output) {
       if (err) {
         grunt.fatal(err)
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         , devDeps = pkg.devDependencies || {}
         , modules = output.modules
         , relativeModules = output.relativeModules
-      
+
       grunt.log.write('Checking dependencies...')
       modules.forEach(function(mod) {
         if (deps.hasOwnProperty(mod)) {
@@ -46,12 +46,12 @@ module.exports = function(grunt) {
         }
       })
       grunt.log.ok()
-      
+
       grunt.log.write('Checking relative dependencies...')
       var keys = Object.keys(relativeModules)
       keys.forEach(function(key) {
         if (!verify.fileWithNameExists(key)) {
-          grunt.log.error(key, 'does not exists')
+          grunt.log.error(key, 'does not exist')
           grunt.log.error('It is referenced from the following files:')
           var refs = relativeModules[key]
           refs.forEach(function(r, index) {
