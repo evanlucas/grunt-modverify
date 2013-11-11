@@ -1,7 +1,7 @@
 {
   "name": "grunt-modverify",
   "description": "Verify that your dependencies are registered in your package.json",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/evanlucas/grunt-modverify",
   "author": {
     "name": "Evan Lucas",
