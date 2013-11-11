@@ -32,6 +32,7 @@ module.exports = function(grunt) {
       var pkg = require(path.join(process.cwd(), 'package.json'))
         , deps = pkg.dependencies
         , devDeps = pkg.devDependencies || {}
+        , optDeps = pkg.optionalDependencies || {}
         , modules = output.modules
         , relativeModules = output.relativeModules
 
@@ -41,6 +42,8 @@ module.exports = function(grunt) {
           grunt.verbose.writeln(mod, 'is registered as a dependency')
         } else if (devDeps.hasOwnProperty(mod)) {
           grunt.verbose.writeln(mod, 'is registered as a dev dependency')
+        } else if (optDeps.hasOwnProperty(mod)) {
+          grunt.verbose.writeln(mod, 'is registered as an optional dependency')
         } else {
           grunt.log.error(mod, 'is NOT registered as a dependency')
           grunt.fatal('Check your package.json')
