@@ -38,6 +38,6 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "modverify": "0.0.7"
+    "modverify": "0.0.8"
   }
 }
