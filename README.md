@@ -1,5 +1,7 @@
 ## grunt-modverify
 
+[![NPM](https://nodei.co/npm/grunt-modverify.png?downloads=true)](https://nodei.co/npm/grunt-modverify/)
+
 A [grunt](http://gruntjs.com) plugin for verifying project dependencies
 
 This is a very basic plugin that scans all of the files in your project verifying that each dependency that has been `required` is present in your project's `package.json` as either a dependency or devDepedency
