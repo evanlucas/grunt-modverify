@@ -24,6 +24,13 @@ If the `required` module is a local module, it verifies that the file exists
 ['!.git', '!components', '!bower_components`', '!node_modules']
 ```
 
+- excludes (used to exclude module from being verified)
+  - default
+
+```js
+[]
+```
+
 ### License
 
 MIT
