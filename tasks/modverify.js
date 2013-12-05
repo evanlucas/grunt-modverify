@@ -45,6 +45,10 @@ module.exports = function(grunt) {
         } else if (optDeps.hasOwnProperty(mod)) {
           grunt.verbose.writeln(mod, 'is registered as an optional dependency')
         } else {
+          if (~options.excludes.indexOf(mod)) {
+            grunt.verbose.writeln('Excluding '+mod)
+            return
+          }
           grunt.log.error(mod, 'is NOT registered as a dependency')
           grunt.fatal('Check your package.json')
         }

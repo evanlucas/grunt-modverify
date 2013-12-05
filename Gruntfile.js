@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         options: {
           fileFilter: ['*.js'],
           directoryFilter: ['!.git', '!components', '!bower_components', '!node_modules'],
-          excludes: ['../testfile']
+          excludes: ['../testfile', 'testfiler']
         }
       }
     }
