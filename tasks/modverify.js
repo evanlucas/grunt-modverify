@@ -24,8 +24,8 @@ module.exports = function(grunt) {
     });
 
     var async = this.async()
-
-    verify.processForDir(process.cwd(), options, function(err, output) {
+    options.root = process.cwd()
+    verify.processForDir(options, function(err, output) {
       if (err) {
         grunt.fatal(err)
       }
